@@ -1,0 +1,14 @@
+qsp*
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.idx
+*.log
+*.nav
+*.out
+*.pyg
+*.snm
+*.gz
+*.toc
+*.vrb
