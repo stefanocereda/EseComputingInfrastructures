@@ -1,0 +1,11 @@
+---
+# This playbook installs the requirements for other Ansible modules (python) if necessary 
+
+#DEBIAN SPECIFIC APPS
+
+- name: install basic utilities debian
+  become: yes
+  tags:
+   - configuration
+  raw: (apt -y update && apt install -y python-minimal)
+

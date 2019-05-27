@@ -1,0 +1,37 @@
+- name: "Create user accounts and add users to groups"
+  tags: 
+   - configuration
+  user:
+    name: "{{ item.username }}"
+    groups: "{{ item.groups }}"
+    shell: '/bin/bash'
+  with_items: "{{ users }}"
+
+- name: "Add authorized keys"
+  tags: 
+   - configuration
+   - security
+  authorized_key:
+    user: "{{ item.username }}"
+    key: "{{ lookup('file', 'files/keys/'+ item.username + '.key.pub') }}"
+  with_items: "{{ users }}"
+
+- name: "Allow admin users to sudo without a password"
+  tags: 
+   - configuration
+  lineinfile:
+    path: "/etc/sudoers"
+    state: "present"
+    regexp: "^%sudo"
+    line: "%sudo ALL=(ALL) NOPASSWD: ALL"
+    validate: 'visudo -cf %s'
+
+- name: "Disable root login via SSH"
+  tags: 
+   - configuration
+   - security
+  lineinfile:
+    dest: "/etc/ssh/sshd_config"
+    regexp: "^PermitRootLogin"
+    line: "PermitRootLogin no"
+  notify: "Restart sshd"

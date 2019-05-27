@@ -1,0 +1,11 @@
+users:
+    - username: "cesare"
+      groups: "adm,cdrom,sudo,dip,plugdev"
+    - username: "luca"
+      groups: "adm,cdrom,sudo,dip,plugdev"
+    - username: "stefano"
+      groups: "adm,cdrom,sudo,dip,plugdev"
+    - username: "ubuntu"
+      groups: "adm,cdrom,sudo,dip,plugdev"
+    - username: "tesisti"
+      groups: "cdrom,dip,plugdev"

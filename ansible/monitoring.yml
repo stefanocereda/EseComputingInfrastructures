@@ -1,0 +1,15 @@
+---
+- hosts: "{{ variable_host | default('all') }}"
+  become: yes
+  become_user: root
+  become_method: sudo
+  roles:
+    - prometheus_node_exporter
+
+- hosts: bilbo
+  become: yes
+  become_user: root
+  become_method: sudo
+  roles:
+    - prometheus
+    - grafana

@@ -1,0 +1,38 @@
+---
+# This playbook install the apps required in a server
+
+#DEBIAN SPECIFIC APPS
+
+- name: Install system updates
+  tags:
+   - configuration
+  apt: upgrade=dist update_cache=yes
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install basic utilities debian
+  tags:
+   - configuration
+  apt: name={{ item }} state=present update_cache=yes
+  with_items:
+   - vim
+   - screen
+   - htop
+   - python-pip
+  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
+
+- name: upgrade pip 
+  tags: 
+   - configuration
+  pip:
+    name: pip
+    extra_args: --upgrade
+
+- name: install required packages
+  tags: 
+   - configuration
+  pip:
+    name: virtualenv
+    
+    #- name: Ensure correct kernel version tools are installed
+  #shell: "apt-get -y install linux-tools-$(uname -r)"
+  #  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
