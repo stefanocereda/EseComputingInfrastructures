@@ -1,0 +1,7 @@
+# Download YCSB and extract
+- name: download ycsb
+  shell: curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.15.0/ycsb-0.15.0.tar.gz
+
+- name: extract ycsb
+  shell: tar xfvz ycsb-0.15.0.tar.gz
+

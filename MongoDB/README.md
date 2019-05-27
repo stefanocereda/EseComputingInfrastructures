@@ -1,32 +1,45 @@
-# Master Node and infrastructure creation
+# Master Node
 Let's start by manually creating a master instance on Amazon.
-I will use a t2.small with ubuntu.
+We will use this machine to manage all our infrastructure and we do not need much resources, so we can use a t2.micro.
 On this machine we need to install ansible and some python libraries:
+```
 sudo apt update
-sudo apt install ansible pytho-pip
+sudo apt install ansible python-pip unzip
 pip install boto boto3 botocore
-copy your private ssh key
+cp [your_private_key] .ssh/id_rsa
+ssh 400 .ssh_id_rsa
+```
 
+# Infrastructure setup
 Now we need the ansible playbooks to create two other machines
-git clone https://github.com/stefanocereda/EseComputingInfrastructures.git
+```
+wget https://github.com/stefanocereda/EseComputingInfrastructures/archive/master.zip
+unzip master.zip
 cd EseComputingInfrastructures/ansible
-export AWS_SECRET_ACCESS_KEY=...
-export AWS_ACCESS_KEY_ID=...
-ansible all -m ping
+export AWS_SECRET_ACCESS_KEY=[your aws secret access key]
+export AWS_ACCESS_KEY_ID=[your aws access key id]
+```
 
-We can now use ansible to create 2 new machines, a c4.large as a client and an i3.large for the server. We will have automatic configuration for our users and install node exporter on all the nodes. Prometheus and grafana will be install and configured on the master node:
-vim launch_instance.sh and choose instance type
-ENV_NAME=client ./launch-instance.sh
-ENV_NAME=server ./launch-instance.sh
-ansible-playbook -v minimal.yml --extra-vars "variable_host=client"
-ansible-playbook -v minimal.yml --extra-vars "variable_host=server"
-ansible-playbook -v common.yml --extra-vars "variable_host=client"
-ansible-playbook -v common.yml --extra-vars "variable_host=server"
-ansible-playbook -v monitoring.yml --extra-vars "variable_host=client"
-ansible-playbook -v monitoring.yml --extra-vars "variable_host=server"
+We can now use ansible to create 2 new machines, we will create 2 c4.large instances.
+We will use ansible to automatically configure our user and install node exporter on both the machines. We will also install and configure prometheus and grafana on the master node.
+```
+ENV_NAME=client ./launch_instance.sh
+ENV_NAME=server ./launch_instance.sh
+ansible all -m ping [save the ip addresses]
 
+ansible-playbook -v minimal.yml --extra-vars "variable_host=[client_ip]"
+ansible-playbook -v common.yml --extra-vars "variable_host=[client_ip]"
+ansible-playbook -v monitoring.yml --extra-vars "variable_host=[client_ip]"
 
-# MongoDB machine
+ansible-playbook -v minimal.yml --extra-vars "variable_host=[server_ip]"
+ansible-playbook -v common.yml --extra-vars "variable_host=[server_ip]"
+ansible-playbook -v monitoring.yml --extra-vars "variable_host=[server_ip]"
+```
+
+# MongoDB setup
+We can use the mongodb playbook to install mongodb on our machine
+
+# MongoDB machine RAID0 SSD
 Now we need to customize our server machine, we want to add another disk and configure them in a RAID0.
 Let's add a disk from the AWS console and attach it to the machine.
 Now create a RAID0:

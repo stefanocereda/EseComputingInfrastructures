@@ -1,0 +1,4 @@
+- hosts: "{{ variable_host | default('web') }}"
+  become: yes
+  roles:
+   - ycsb

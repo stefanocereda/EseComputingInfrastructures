@@ -6,7 +6,7 @@
   roles:
     - prometheus_node_exporter
 
-- hosts: 63.35.169.196
+- hosts: localhost
   become: yes
   become_user: root
   become_method: sudo
