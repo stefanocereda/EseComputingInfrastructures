@@ -216,7 +216,7 @@ grafana_datasources:
   - name: "Prometheus"
     type: "prometheus"
     access: "proxy"
-    url: "http://bilbo.local:9090"
+    url: "http://localhost:9090"
 #    basicAuth: true
 #    basicAuthUser: "admin"
 #    basicAuthPassword: "password"
