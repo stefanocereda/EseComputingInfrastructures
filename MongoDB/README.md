@@ -130,6 +130,7 @@ R_upd: 4453
 Unexpectedly, our database is even slower!
 You have access to all the system metrics on grafana:
 http://52.214.146.80:3000/d/WoUJ8eWWk/node-exporter-full?orgId=1&from=1558974570410&to=1558975208671&var-job=node_exporter&var-node=34.243.140.15&var-port=9100
+
 *CAN YOU SPOT THE BOTTLENECK?*
 
 
@@ -149,7 +150,7 @@ By playing with the number of users we can validate the bounds on X and R:
 ```
 for N in 1 2 3 4 5 10 20 30 50 100; do
         echo Running test for N=$N
-        ./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $N  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -target -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+        ./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $N  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
 done
-# started at XXX on grafana
+# started at 20.13 on grafana
 ```
