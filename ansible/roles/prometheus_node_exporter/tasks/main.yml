@@ -14,13 +14,13 @@
 
 - name: Install prometheus node exporter
   unarchive:
-    src: "https://github.com/prometheus/node_exporter/releases/download/v{{ version }}/node_exporter-{{ version }}.linux-arm64.tar.gz"
+    src: "https://github.com/prometheus/node_exporter/releases/download/v{{ version }}/node_exporter-{{ version }}.linux-amd64.tar.gz"
     dest: /tmp/
     remote_src: yes
 
 - name: Copy prometheus node exporter file to bin
   copy:
-    src: "/tmp/node_exporter-{{ version }}.linux-arm64/node_exporter"
+    src: "/tmp/node_exporter-{{ version }}.linux-amd64/node_exporter"
     dest: "/usr/local/bin/node_exporter"
     owner: "{{userId}}"
     group: "{{groupId}}"
@@ -29,7 +29,7 @@
 
 - name: Delete node exporter tmp folder
   file:
-    path: '/tmp/node_exporter-{{ version }}.linux-arm64'
+    path: '/tmp/node_exporter-{{ version }}.linux-amd64'
     state: absent
 
 - name: Copy systemd init file
