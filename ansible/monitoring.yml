@@ -6,7 +6,7 @@
   roles:
     - prometheus_node_exporter
 
-- hosts: bilbo
+- hosts: 63.35.169.196
   become: yes
   become_user: root
   become_method: sudo
