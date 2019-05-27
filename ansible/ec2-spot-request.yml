@@ -21,7 +21,7 @@
          key_name: recsys
          group: "Internal Access"
          instance_type: "{{ instance_type | default('t2.micro') }}"
-         image: ami-047d41821c231284a
+         image: ami-08d658f84a6d84a80
                 #"{{ latest_ami.image_id }}"
          count: "{{ count | default('1') }}"
          wait: yes
