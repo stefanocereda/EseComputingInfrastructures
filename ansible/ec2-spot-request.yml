@@ -1,4 +1,4 @@
-# Launch instances, wait for ssh, apply minimal and common roles and add to monitoring
+
 
 - name: Create a spot instance request
   hosts: localhost
@@ -19,7 +19,7 @@
     - name: Launch instance
       ec2:
          key_name: recsys
-         group: "Internal Access"
+         group: "default"
          instance_type: "{{ instance_type | default('t2.micro') }}"
          image: ami-08d658f84a6d84a80
                 #"{{ latest_ami.image_id }}"
