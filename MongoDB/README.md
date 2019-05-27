@@ -3,11 +3,12 @@ Let's start by manually creating a master instance on Amazon.
 We will use this machine to manage all our infrastructure and we do not need much resources, so we can use a t2.micro.
 On this machine we need to install ansible and some python libraries:
 ```
+ssh -i [your_private_key] ubuntu@[master_ip]
 sudo apt update
-sudo apt install ansible python-pip unzip
+sudo apt install -y ansible python-pip unzip
 pip install boto boto3 botocore
 cp [your_private_key] .ssh/id_rsa
-ssh 400 .ssh_id_rsa
+chmod 400 .ssh/id_rsa
 ```
 
 # Infrastructure setup
@@ -15,7 +16,7 @@ Now we need the ansible playbooks to create two other machines
 ```
 wget https://github.com/stefanocereda/EseComputingInfrastructures/archive/master.zip
 unzip master.zip
-cd EseComputingInfrastructures/ansible
+cd EseComputingInfrastructures-master/ansible
 export AWS_SECRET_ACCESS_KEY=[your aws secret access key]
 export AWS_ACCESS_KEY_ID=[your aws access key id]
 ```
@@ -25,7 +26,7 @@ We will use ansible to automatically configure our user and install node exporte
 ```
 ENV_NAME=client ./launch_instance.sh
 ENV_NAME=server ./launch_instance.sh
-ansible all -m ping [save the ip addresses]
+ansible all -m ping # save the ip addresses
 
 ansible-playbook -v minimal.yml --extra-vars "variable_host=[client_ip]"
 ansible-playbook -v common.yml --extra-vars "variable_host=[client_ip]"
@@ -36,46 +37,119 @@ ansible-playbook -v common.yml --extra-vars "variable_host=[server_ip]"
 ansible-playbook -v monitoring.yml --extra-vars "variable_host=[server_ip]"
 ```
 
+# YCSB setup
+We can simply apply the ycsb role to install ycsb, it will also install java
+```
+ansible-playbook -v ycsb.yaml --extra-vars "variable_host=[client_ip]"
+```
+
 # MongoDB setup
-We can use the mongodb playbook to install mongodb on our machine
-
-# MongoDB machine RAID0 SSD
-Now we need to customize our server machine, we want to add another disk and configure them in a RAID0.
-Let's add a disk from the AWS console and attach it to the machine.
-Now create a RAID0:
-lsblk
-sudo mdadm -Cv /dev/md0 --level=0 -n 2 /dev/xvdf /dev/xvdg
-sudo mkfs.xfs /dev/md0
-sudo mkdir /mnt/mongo
-sudo mount /dev/md0 /mnt/mongo
-
-Now we need to install mongo:
+We could create a ycsb ansible playbook to automate thew installation of MongoDB, but let's do it manually so to understand how we setup the disks.
+So far we only have a single disk on this machine, we will let MongoDB use this (very slow) disk.
+```
+ssh [server_ip]
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 sudo apt-get update
 sudo apt-get install -y mongodb-org
-sudo vim /etc/mongod.conf
-	dbPath: /mnt/mongo/mongodb
-	logPath: /mnt/mongo/log/mongod.log
-	bindIp: 0.0.0.0
+sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf  # Open the DB to every ip
+sudo service mongod start
+sudo service mongod status
+```
+
+# First performance test
+Let's go on the client machine and create the database, then load the server to find out the maximum throughput.
+```
+ssh [client_ip]
+export MONGODB_SERVER_IP=[server_ip]
+export RECORDCOUNT=3000000  # dimension of dataset
+export WORKLOAD=a  # balance between read and update queries
+export LOAD_THREADS=16  # number of client to create db
+export RUN_THREADS=16  # number of clients to run perf test
+export DURATION=600  # test duration in seconds
+
+echo Creating DB with $RECORDCOUNT records...
+./ycsb-0.15.0/bin/ycsb load mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $LOAD_THREADS  -p recordcount=$RECORDCOUNT -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+
+echo Testing X_max with $RUN_THREADS users
+./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $RUN_THREADS -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+```
+We obtain as final values:
+X: 4223
+R_read: 3763
+R_upd: 3805
+
+As the test proceeds (you can try to increase the duration) we will observe two interesting things:
+- initially the throughput will increase, this is because our database is populating its cache, increasing performance
+- after a while (~ half an hour, increase the test duration to see this), the throughput will _drammatically_ drop, that's because we are runnigng our DB on an Amazon instance with a burstable amount of IOPS, meaning that we can substain high IO rates for a certain amount of time, but then they will be reduced.
+
+We can now go to our grafana dashboard on the master node (52.214.146.80:3000 login with user/user in my case, run test starts at 18.10) and look at the `Node Exporter Full` dashboard, where we can observe a lot of IO wait in the cpu time.
+
+We thus think that we are being limited by ourd disk, and thus try to move the database to a faster instance.
+
+
+# Adding a RAID-0
+Let's create four other 10GB SSD disks on Amazon and attach them to our machine.
+Use the disks to create a RAID-0:
+
+```
+ssh [server_ip]
+sudo service mongod stop
+lsblk
+sudo mdadm -Cv /dev/md0 --level=0 -n 4 /dev/xvdf /dev/xvdg /dev/xvdh /dev/xvdi
+sudo mkfs.xfs /dev/md0
+sudo mkdir /mnt/mongo
+sudo mount /dev/md0 /mnt/mongo
 cd /mnt/mongo
 sudo mkdir mongodb
 sudo mkdir log
 sudo chown -R mongodb *
+sudo sed -i 's/\/var\/log\/mongodb\/mongod.log/\/mnt\/mongo\/log\/mongod.log/g' /etc/mongod.conf
+sudo sed -i 's/\/var\/lib\/mongodb/\/mnt\/mongo\/mongodb/g' /etc/mongod.conf
 sudo service mongod start
 sudo service mongod status
+```
 
-# Client machine
-On the client machine we just need to install ycsb:
-wget https://github.com/brianfrankcooper/YCSB/releases/download/0.15.0/ycsb-0.15.0.tar.gz
-tar xvf ycsb-0.15.0.tar.gz
-wget ... run_ycsb.py
-vim run_ycsb.py
-	insert mongodb server ip address
-./run_ycsb.py
+# Second performance test
+We now need to recreate the dataset and run again the test for maximum throughput
+```
+[on client machine]
+echo Creating DB with $RECORDCOUNT records...
+./ycsb-0.15.0/bin/ycsb load mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $LOAD_THREADS  -p recordcount=$RECORDCOUNT -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+# started at 18.25 on grafana
+
+echo Testing X_max with $RUN_THREADS users
+./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $RUN_THREADS -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+# started at 18.29 on grafana
+```
+We obtain as final values:
+X: 3610
+R_read: 4401
+R_upd: 4453
+
+Unexpectedly, our database is even slower!
+You have access to all the system metrics on grafana:
+http://52.214.146.80:3000/d/WoUJ8eWWk/node-exporter-full?orgId=1&from=1558974570410&to=1558975208671&var-job=node_exporter&var-node=34.243.140.15&var-port=9100
+*CAN YOU SPOT THE BOTTLENECK?*
 
 
-# Conclusion
-All the setup for mongo and ycsb can (and should) be automated in ansible.
-We can access grafana on master node at port 3000
+# Other interesting analysis
+We can increase the target throughput to validate response time law.
+Collect the data with:
+```
+for TGT_X in 100 200 300 500 1000 2000 3000; do
+        echo Running test for X=$TGT_X
+        ./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $RUN_THREADS  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -target $TGT_X -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+done
+# started at 19.00 on grafana
+```
+Look at the .ods file for the analysis.
 
+By playing with the number of users we can validate the bounds on X and R:
+```
+for N in 1 2 3 4 5 10 20 30 50 100; do
+        echo Running test for N=$N
+        ./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $N  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -target -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+done
+# started at XXX on grafana
+```
