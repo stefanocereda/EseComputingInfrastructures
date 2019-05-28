@@ -1,3 +1,8 @@
+You can find all the material on my github repository:
+https://github.com/stefanocereda/EseComputingInfrastructures/blob/master/MongoDB/README.md
+https://github.com/stefanocereda/EseComputingInfrastructures/tree/master/ansibl://github.com/stefanocereda/EseComputingInfrastructures/tree/master/ansible
+
+
 # Master Node
 Let's start by manually creating a master instance on Amazon.
 We will use this machine to manage all our infrastructure and we do not need much resources, so we can use a t2.micro.
