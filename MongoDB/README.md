@@ -90,7 +90,7 @@ As the test proceeds (you can try to increase the duration) we will observe two 
 - initially the throughput will increase, this is because our database is populating its cache, increasing performance
 - after a while (~ half an hour, increase the test duration to see this), the throughput will _drammatically_ drop, that's because we are runnigng our DB on an Amazon instance with a burstable amount of IOPS, meaning that we can substain high IO rates for a certain amount of time, but then they will be reduced.
 
-We can now go to our grafana dashboard on the master node (52.214.146.80:3000 login with user/user in my case, run test starts at 18.10) and look at the `Node Exporter Full` dashboard, where we can observe a lot of IO wait in the cpu time.
+We can now go to our grafana dashboard on the master node (https://52.214.146.80 login with user/user in my case, run test starts at 18.10) and look at the `Node Exporter Full` dashboard, where we can observe a lot of IO wait in the cpu time.
 
 We thus think that we are being limited by ourd disk, and thus try to move the database to a faster instance.
 
@@ -136,7 +136,7 @@ R_upd: 4453
 
 Unexpectedly, our database is even slower!
 You have access to all the system metrics on grafana:
-http://52.214.146.80:3000/d/WoUJ8eWWk/node-exporter-full?orgId=1&from=1558974570410&to=1558975208671&var-job=node_exporter&var-node=34.243.140.15&var-port=9100
+http://52.214.146.80/d/WoUJ8eWWk/node-exporter-full?orgId=1&from=1558974570410&to=1558975208671&var-job=node_exporter&var-node=34.243.140.15&var-port=9100
 
 *CAN YOU SPOT THE BOTTLENECK?*
 
