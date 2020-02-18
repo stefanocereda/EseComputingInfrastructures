@@ -53,7 +53,7 @@ ansible-playbook -v ycsb.yaml --extra-vars "variable_host=[client_ip]"
 ```
 
 # MongoDB setup
-We could create a ycsb ansible playbook to automate thew installation of MongoDB, but let's do it manually so to understand how we setup the disks.
+We could create a ycsb ansible playbook to automate the installation of MongoDB, but let's do it manually so to understand how we setup the disks.
 So far we only have a single disk on this machine, we will let MongoDB use this (very slow) disk.
 ```
 ssh [server_ip]
