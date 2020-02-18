@@ -6,7 +6,7 @@ DURATION=300  # duration of test in second
 cd ycsb-0.17.0
 
 echo Running test for X_max
-./bin/ycsb run mongodb-async -s -P workloads/workload$WORKLOAD -threads $RUN_THREADS  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+./bin/ycsb run mongodb-async -s -P workloads/workload$WORKLOAD -threads $RUN_THREADS  -p recordcount=$RECORDCOUNT -p operationcount=$RECORDCOUNT -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
 
 for TGT_X in 100 200 300 500 1000 2000 3000; do
         echo Running test for X=$TGT_X
