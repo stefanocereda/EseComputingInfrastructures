@@ -35,6 +35,8 @@ ENV_NAME=client ./launch_instance.sh
 ENV_NAME=server ./launch_instance.sh
 ansible all -m ping # save the ip addresses
 
+# In alternative, you can manually create the machines and then add the ip to hosts/inventory
+
 ansible-playbook -v minimal.yml --extra-vars "variable_host=[client_ip]"
 ansible-playbook -v common.yml --extra-vars "variable_host=[client_ip]"
 ansible-playbook -v monitoring.yml --extra-vars "variable_host=[client_ip]"
