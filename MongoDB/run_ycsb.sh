@@ -18,6 +18,6 @@ done
 
 for N in 1 2 3 4 5 10 20 30 50 100; do
         echo Running test for N=$N
-        ./0/bin/ycsb run mongodb-async -s -P workloads/workload$WORKLOAD -threads $N  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -target -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+        ./0/bin/ycsb run mongodb-async -s -P workloads/workload$WORKLOAD -threads $N  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
 done
 
