@@ -66,6 +66,21 @@ sudo service mongod start
 sudo service mongod status
 ```
 
+# Is Lazowska right?
+We can now use YCSB to inject some load into MongoDB and use the collected metrics to check some performance laws.
+Let's start by actually creating our db with the create_db.sh scriptm which should be run on the cleint machine.
+
+Now we can find the maximum throughput of our database with the run_ycsb.sh script (up to line 9).
+We obtain X_max = 5456
+
+By using a target troughput lower than X_max and exploring different values we can validate the response time law.
+Collect the data with the second section of runc_ycsb.sh
+
+By playing with the number of users (third section of the script) we can validate the bounds on X and R.
+
+Look at the .ods file for the analysis.
+
+
 # First performance test
 Let's go on the client machine and create the database, then load the server to find out the maximum throughput.
 ```
@@ -143,23 +158,3 @@ http://52.214.146.80/d/WoUJ8eWWk/node-exporter-full?orgId=1&from=1558974570410&t
 *CAN YOU SPOT THE BOTTLENECK?*
 
 
-# Other interesting analysis
-We can increase the target throughput to validate response time law.
-Collect the data with:
-```
-for TGT_X in 100 200 300 500 1000 2000 3000; do
-        echo Running test for X=$TGT_X
-        ./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $RUN_THREADS  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -target $TGT_X -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
-done
-# started at 19.00 on grafana
-```
-Look at the .ods file for the analysis.
-
-By playing with the number of users we can validate the bounds on X and R:
-```
-for N in 1 2 3 4 5 10 20 30 50 100; do
-        echo Running test for N=$N
-        ./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $N  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
-done
-# started at 20.13 on grafana
-```
