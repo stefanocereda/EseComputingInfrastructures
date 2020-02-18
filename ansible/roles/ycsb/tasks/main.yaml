@@ -1,9 +1,9 @@
 # Download YCSB and extract. Then install java
 - name: download ycsb
-  shell: curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.15.0/ycsb-0.15.0.tar.gz
+  shell: curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-0.17.0.tar.gz
 
 - name: extract ycsb
-  shell: tar xfvz ycsb-0.15.0.tar.gz
+  shell: tar xfvz ycsb-0.17.0.tar.gz
 
 - name: Install basic utilities debian
   tags:
