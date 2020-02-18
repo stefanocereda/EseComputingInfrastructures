@@ -57,7 +57,7 @@ We could create a ycsb ansible playbook to automate the installation of MongoDB,
 So far we only have a single disk on this machine, we will let MongoDB use this (very slow) disk.
 ```
 ssh [server_ip]
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 4B7C549A058F8B6B
 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
 sudo apt-get update
 sudo apt-get install -y mongodb-org
