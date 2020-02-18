@@ -4,5 +4,6 @@ WORKLOAD=a  # workload type
 LOAD_THREADS=16  # number of threads to use to create data 
 
 echo Creating DB with $RECORDCOUNT records...
-./ycsb-0.17.0/bin/ycsb load mongodb-async -s -P workloads/workload$WORKLOAD -threads $LOAD_THREADS  -p recordcount=$RECORDCOUN
-T -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+
+cd ycsb-0.17.0
+./bin/ycsb load mongodb-async -s -P workloads/workload$WORKLOAD -threads $LOAD_THREADS  -p recordcount=$RECORDCOUNT -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
