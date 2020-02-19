@@ -78,38 +78,23 @@ Collect the data with the second section of runc_ycsb.sh
 
 By playing with the number of users (third section of the script) we can validate the bounds on X and R.
 
-Look at the .ods file for the analysis.
+Look at the .ods file for the analysis (tldr: Lazowska is right)
 
 
 # First performance test
-Let's go on the client machine and create the database, then load the server to find out the maximum throughput.
-```
-ssh [client_ip]
-export MONGODB_SERVER_IP=[server_ip]
-export RECORDCOUNT=3000000  # dimension of dataset
-export WORKLOAD=a  # balance between read and update queries
-export LOAD_THREADS=16  # number of client to create db
-export RUN_THREADS=16  # number of clients to run perf test
-export DURATION=600  # test duration in seconds
+Let's now run a longer test, to see whether we can keep up with the load.
+Increase the duration to 1 hour and run again the test for max_x.
 
-echo Creating DB with $RECORDCOUNT records...
-./ycsb-0.15.0/bin/ycsb load mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $LOAD_THREADS  -p recordcount=$RECORDCOUNT -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
+As the test proceeds we observe that, after a while (~ half an hour), the throughput will _drammatically_ drop.
 
-echo Testing X_max with $RUN_THREADS users
-./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $RUN_THREADS -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
-```
-We obtain as final values:
-X: 4223
-R_read: 3763
-R_upd: 3805
+We now look at the grafana dashboard:
+ - http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582105403442&to=1582107494689&var-node=172.31.36.162:9100 (login with user/user)
+ - http://polimi.dev.akamas.io:3000/dashboard/snapshot/WN4m0GjljYtWUWh2EmACciOGfzQCWgfR?orgId=1
+ 
+Looking at high iowait time and disk utilization, we can conclude that our bootleneck is the disk.
+Looking at disk IOs and throughput, we find the culprit of trhoughput drop: ee are runnigng our DB on an Amazon instance with a burstable amount of IOPS, meaning that we can substain high IO rates for a certain amount of time, but then they will be reduced.
 
-As the test proceeds (you can try to increase the duration) we will observe two interesting things:
-- initially the throughput will increase, this is because our database is populating its cache, increasing performance
-- after a while (~ half an hour, increase the test duration to see this), the throughput will _drammatically_ drop, that's because we are runnigng our DB on an Amazon instance with a burstable amount of IOPS, meaning that we can substain high IO rates for a certain amount of time, but then they will be reduced.
-
-We can now go to our grafana dashboard on the master node (https://52.214.146.80 login with user/user in my case, run test starts at 18.10) and look at the `Node Exporter Full` dashboard, where we can observe a lot of IO wait in the cpu time.
-
-We thus think that we are being limited by ourd disk, and thus try to move the database to a faster instance.
+We thus conclude that we are being limited by our disk, and thus try to move the database to a faster instance.
 
 
 # Adding a RAID-0
