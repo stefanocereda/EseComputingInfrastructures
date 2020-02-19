@@ -106,7 +106,7 @@ Use the disks to create a RAID-0:
 ssh [server_ip]
 sudo service mongod stop
 lsblk
-sudo mdadm -Cv /dev/md0 --level=0 -n 4 /dev/xvdf /dev/xvdg /dev/xvdh /dev/xvdi
+sudo mdadm -Cv /dev/md0 --level=0 -n 4 /dev/nvme1n1 /dev/nvme2n1 /dev/nvme3n1 /dev/nvme4n1
 sudo mkfs.xfs /dev/md0
 sudo mkdir /mnt/mongo
 sudo mount /dev/md0 /mnt/mongo
