@@ -121,24 +121,7 @@ sudo service mongod status
 ```
 
 ## Repeating the long test
-We now need to recreate the dataset and run again the test for maximum throughput
-```
-[on client machine]
-echo Creating DB with $RECORDCOUNT records...
-./ycsb-0.15.0/bin/ycsb load mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $LOAD_THREADS  -p recordcount=$RECORDCOUNT -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
-# started at 18.25 on grafana
+Recreate the dataset and launch again the long test. The database is effectively faster (X_max=7614)
 
-echo Testing X_max with $RUN_THREADS users
-./ycsb-0.15.0/bin/ycsb run mongodb-async -s -P ycsb-0.15.0/workloads/workload$WORKLOAD -threads $RUN_THREADS -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
-# started at 18.29 on grafana
-```
-We obtain as final values:
-X: 3610
-R_read: 4401
-R_upd: 4453
-
-Unexpectedly, our database is even slower!
-You have access to all the system metrics on grafana:
-http://52.214.146.80/d/WoUJ8eWWk/node-exporter-full?orgId=1&from=1558974570410&to=1558975208671&var-job=node_exporter&var-node=34.243.140.15&var-port=9100
-
-*CAN YOU SPOT THE BOTTLENECK?*
+http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582108899539&to=1582110448630&var-node=172.31.36.162:9100
+http://polimi.dev.akamas.io:3000/dashboard/snapshot/d6CbpbEjlG6ldArviFapqtUVetOS9bYE
