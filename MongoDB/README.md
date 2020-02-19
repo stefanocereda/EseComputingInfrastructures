@@ -4,8 +4,8 @@ https://github.com/stefanocereda/EseComputingInfrastructures/blob/master/MongoDB
 
 https://github.com/stefanocereda/EseComputingInfrastructures/tree/master/ansible
 
-
-# Master Node
+# Infrastructure setup
+## Master Node creation
 Let's start by manually creating a master instance on Amazon.
 We will use this machine to manage all our infrastructure and we do not need much resources, so we can use a t2.micro.
 On this machine we need to install ansible and some python libraries:
@@ -18,7 +18,7 @@ cp [your_private_key] .ssh/id_rsa
 chmod 400 .ssh/id_rsa
 ```
 
-# Infrastructure setup
+## Client and Server machines creation
 Now we need the ansible playbooks to create two other machines
 ```
 wget https://github.com/stefanocereda/EseComputingInfrastructures/archive/master.zip
@@ -46,13 +46,13 @@ ansible-playbook -v common.yml --extra-vars "variable_host=[server_ip]"
 ansible-playbook -v monitoring.yml --extra-vars "variable_host=[server_ip]"
 ```
 
-# YCSB setup
+## Client: YCSB setup
 We can simply apply the ycsb role to install ycsb, it will also install java
 ```
 ansible-playbook -v ycsb.yaml --extra-vars "variable_host=[client_ip]"
 ```
 
-# MongoDB setup
+## Server: MongoDB setup
 We could create a ycsb ansible playbook to automate the installation of MongoDB, but let's do it manually so to understand how we setup the disks.
 So far we only have a single disk on this machine, we will let MongoDB use this (very slow) disk.
 ```
@@ -66,7 +66,8 @@ sudo service mongod start
 sudo service mongod status
 ```
 
-# Is Lazowska right?
+# Let's run some performance tests
+## Is Lazowska right?
 We can now use YCSB to inject some load into MongoDB and use the collected metrics to check some performance laws.
 Let's start by actually creating our db with the create_db.sh scriptm which should be run on the cleint machine.
 
@@ -81,7 +82,7 @@ By playing with the number of users (third section of the script) we can validat
 Look at the .ods file for the analysis (tldr: Lazowska is right)
 
 
-# First performance test
+## A longer test
 Let's now run a longer test, to see whether we can keep up with the load.
 Increase the duration to 1 hour and run again the test for max_x.
 
@@ -97,7 +98,7 @@ Looking at disk IOs and throughput, we find the culprit of trhoughput drop: ee a
 We thus conclude that we are being limited by our disk, and thus try to move the database to a faster instance.
 
 
-# Adding a RAID-0
+## Adding a RAID-0
 Let's create four other 10GB SSD disks on Amazon and attach them to our machine.
 Use the disks to create a RAID-0:
 
@@ -119,7 +120,7 @@ sudo service mongod start
 sudo service mongod status
 ```
 
-# Second performance test
+## Repeating the long test
 We now need to recreate the dataset and run again the test for maximum throughput
 ```
 [on client machine]
@@ -141,5 +142,3 @@ You have access to all the system metrics on grafana:
 http://52.214.146.80/d/WoUJ8eWWk/node-exporter-full?orgId=1&from=1558974570410&to=1558975208671&var-job=node_exporter&var-node=34.243.140.15&var-port=9100
 
 *CAN YOU SPOT THE BOTTLENECK?*
-
-
