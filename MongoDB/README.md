@@ -125,3 +125,30 @@ Recreate the dataset and launch again the long test. The database is effectively
 
 http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582108899539&to=1582110448630&var-node=172.31.36.162:9100
 http://polimi.dev.akamas.io:3000/dashboard/snapshot/d6CbpbEjlG6ldArviFapqtUVetOS9bYE
+
+## Changing the filesystem
+We still are not happy with performance. We thus look at mongodb configuration suggestions:
+https://docs.mongodb.com/manual/administration/production-notes/
+Where we discover that:
+``When running MongoDB in production on Linux, you should use Linux kernel version 2.6.36 or later, with either the XFS or EXT4 filesystem. If possible, use XFS as it generally performs better with MongoDB.''
+Let's see if they are right and move our database to an ext4 disk.
+```
+ssh [server_ip]
+sudo service mongod stop
+sudo umount /mnt/mongo
+sudo mkfs.ext4 /dev/md0
+sudo mkdir /mnt/mongo
+sudo mount /dev/md0 /mnt/mongo
+cd /mnt/mongo
+sudo mkdir mongodb
+sudo mkdir log
+sudo chown -R mongodb *
+sudo sed -i 's/\/var\/log\/mongodb\/mongod.log/\/mnt\/mongo\/log\/mongod.log/g' /etc/mongod.conf
+sudo sed -i 's/\/var\/lib\/mongodb/\/mnt\/mongo\/mongodb/g' /etc/mongod.conf
+sudo service mongod start
+sudo service mongod status
+'''
+Create again the database and run another long test.
+The throughput increases to X_max = 8579
+Ouch! MongoDB production notes are wrong! Or do the optimal configuration depends on you workload?
+Let's find it out with https://www.akamas.io/
