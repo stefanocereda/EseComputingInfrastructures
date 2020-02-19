@@ -150,5 +150,9 @@ sudo service mongod status
 '''
 Create again the database and run another long test.
 The throughput increases to X_max = 8579
+
+http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582117268593&to=1582119315053&var-node=172.31.36.162:9100
+http://polimi.dev.akamas.io:3000/dashboard/snapshot/ePD0yjXVwFgXHU3D1zfmqLbEPnADgsly
+
 Ouch! MongoDB production notes are wrong! Or do the optimal configuration depends on you workload?
 Let's find it out with https://www.akamas.io/
