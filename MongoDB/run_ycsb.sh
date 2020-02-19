@@ -15,9 +15,12 @@ for TGT_X in 100 200 300 500 1000 2000 3000 5000; do
         ./bin/ycsb run mongodb-async -s -P workloads/workload$WORKLOAD -threads $RUN_THREADS  -p recordcount=$RECORDCOUNT -p operationcount=$RECORDCOUNT -p maxexecutiontime=$DURATION -target $TGT_X -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
 done
 
-
+# NUMBER OF USERS
 for N in 1 2 3 4 5 10 20 30 50 100; do
         echo Running test for N=$N
         ./0/bin/ycsb run mongodb-async -s -P workloads/workload$WORKLOAD -threads $N  -p recordcount=$RECORDCOUNT -p operationcount=0 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
 done
 
+# LONG TEST
+DURATION=3600
+./bin/ycsb run mongodb-async -s -P workloads/workload$WORKLOAD -threads $RUN_THREADS  -p recordcount=$RECORDCOUNT -p operationcount=${RECORDCOUNT}00 -p maxexecutiontime=$DURATION -p mongodb.url=mongodb://$MONGODB_SERVER_IP:27017
