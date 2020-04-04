@@ -1,0 +1,795 @@
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:41:29:104 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:41:39:104 10 sec: 51734 operations; 5173.4 current ops/sec; est completion in 9 minutes [READ: Count=25817, Max=85119, Min=113, Avg=3041.17, 90=5619, 99=14895, 99.9=34559, 99.99=79103] [UPDATE: Count=26014, Max=97535, Min=152, Avg=3078.2, 90=5599, 99=16415, 99.9=34495, 99.99=74175] 
+2020-02-18 16:41:49:104 20 sec: 82425 operations; 3069.1 current ops/sec; est completion in 11 minutes [READ: Count=15134, Max=96703, Min=116, Avg=5181.07, 90=10639, 99=29455, 99.9=39647, 99.99=94079] [UPDATE: Count=15465, Max=99583, Min=149, Avg=5249.41, 90=10911, 99=29183, 99.9=38335, 99.99=97983] 
+2020-02-18 16:41:59:104 30 sec: 129890 operations; 4746.5 current ops/sec; est completion in 11 minutes [READ: Count=23755, Max=47327, Min=108, Avg=3339.09, 90=6499, 99=19055, 99.9=35103, 99.99=44671] [UPDATE: Count=23708, Max=47391, Min=149, Avg=3399.46, 90=6527, 99=21919, 99.9=35615, 99.99=43263] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:41:59:143 30 sec: 129913 operations; 605.26 current ops/sec; est completion in 11 minutes [READ: Count=14, Max=34559, Min=10120, Avg=25632.57, 90=34431, 99=34559, 99.9=34559, 99.99=34559] [CLEANUP: Count=16, Max=2393, Min=0, Avg=151.06, 90=2, 99=2393, 99.9=2393, 99.99=2393] [UPDATE: Count=6, Max=32559, Min=25920, Avg=29744, 90=32111, 99=32559, 99.9=32559, 99.99=32559] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 100 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 100 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+2020-02-18 16:41:59:721 0 sec: 0 operations; est completion in 0 second 
+Maximum execution time specified as: 30 secs
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:42:09:721 10 sec: 994 operations; 99.4 current ops/sec; est completion in 8 hours 22 minutes [READ: Count=491, Max=71999, Min=153, Avg=1145.3, 90=1333, 99=18495, 99.9=71999, 99.99=71999] [UPDATE: Count=504, Max=68287, Min=233, Avg=1315.55, 90=1430, 99=17327, 99.9=64127, 99.99=68287] 
+2020-02-18 16:42:19:721 20 sec: 1996 operations; 100.2 current ops/sec; est completion in 8 hours 20 minutes [READ: Count=485, Max=7499, Min=147, Avg=653.07, 90=1145, 99=4383, 99.9=7499, 99.99=7499] [UPDATE: Count=516, Max=5723, Min=204, Avg=721.69, 90=1317, 99=4255, 99.9=5439, 99.99=5723] 
+2020-02-18 16:42:29:721 30 sec: 2994 operations; 99.8 current ops/sec; est completion in 8 hours 20 minutes [READ: Count=493, Max=8735, Min=134, Avg=783.48, 90=2038, 99=4735, 99.9=8735, 99.99=8735] [UPDATE: Count=505, Max=6383, Min=188, Avg=762.52, 90=1786, 99=4351, 99.9=5587, 99.99=6383] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:42:29:903 30 sec: 2997 operations; 16.48 current ops/sec; est completion in 8 hours 23 minutes [READ: Count=2, Max=3825, Min=234, Avg=2029.5, 90=3825, 99=3825, 99.9=3825, 99.99=3825] [CLEANUP: Count=16, Max=2397, Min=1, Avg=151.25, 90=2, 99=2397, 99.9=2397, 99.99=2397] [UPDATE: Count=1, Max=1101, Min=1101, Avg=1101, 90=1101, 99=1101, 99.9=1101, 99.99=1101] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 200 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 200 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:42:30:468 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:42:40:468 10 sec: 1984 operations; 198.38 current ops/sec; est completion in 4 hours 11 minutes [READ: Count=998, Max=68991, Min=134, Avg=1000.35, 90=1670, 99=5467, 99.9=62847, 99.99=68991] [UPDATE: Count=987, Max=82559, Min=180, Avg=1134.45, 90=1850, 99=6523, 99.9=76031, 99.99=82559] 
+2020-02-18 16:42:50:468 20 sec: 3984 operations; 200 current ops/sec; est completion in 4 hours 10 minutes [READ: Count=990, Max=8639, Min=127, Avg=670.9, 90=1499, 99=4863, 99.9=7915, 99.99=8639] [UPDATE: Count=1009, Max=25311, Min=173, Avg=823.55, 90=1982, 99=5639, 99.9=21855, 99.99=25311] 
+2020-02-18 16:43:00:468 30 sec: 5984 operations; 200.02 current ops/sec; est completion in 4 hours 10 minutes [READ: Count=1009, Max=7459, Min=122, Avg=584.16, 90=1144, 99=3615, 99.9=7387, 99.99=7459] [UPDATE: Count=991, Max=7671, Min=172, Avg=666.68, 90=1185, 99=4391, 99.9=7107, 99.99=7671] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:43:00:564 30 sec: 5988 operations; 41.24 current ops/sec; est completion in 4 hours 10 minutes [READ: Count=3, Max=777, Min=144, Avg=527.67, 90=777, 99=777, 99.9=777, 99.99=777] [CLEANUP: Count=16, Max=5279, Min=0, Avg=330.81, 90=1, 99=5279, 99.9=5279, 99.99=5279] [UPDATE: Count=1, Max=779, Min=779, Avg=779, 90=779, 99=779, 99.9=779, 99.99=779] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 300 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 300 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:43:01:170 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:43:11:170 10 sec: 2979 operations; 297.9 current ops/sec; est completion in 2 hours 47 minutes [READ: Count=1508, Max=66111, Min=126, Avg=890.3, 90=1393, 99=5475, 99.9=47615, 99.99=66111] [UPDATE: Count=1475, Max=49663, Min=177, Avg=1043.15, 90=1657, 99=6759, 99.9=49567, 99.99=49663] 
+2020-02-18 16:43:21:170 20 sec: 5983 operations; 300.4 current ops/sec; est completion in 2 hours 46 minutes [READ: Count=1478, Max=23583, Min=125, Avg=667.25, 90=1171, 99=4859, 99.9=20335, 99.99=23583] [UPDATE: Count=1522, Max=19439, Min=167, Avg=680.47, 90=1127, 99=4651, 99.9=13119, 99.99=19439] 
+2020-02-18 16:43:31:170 30 sec: 8979 operations; 299.6 current ops/sec; est completion in 2 hours 46 minutes [READ: Count=1487, Max=25055, Min=117, Avg=559.83, 90=953, 99=3459, 99.9=19743, 99.99=25055] [UPDATE: Count=1510, Max=21519, Min=161, Avg=636.41, 90=1021, 99=4271, 99.9=16671, 99.99=21519] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:43:31:241 30 sec: 8989 operations; 138.89 current ops/sec; est completion in 2 hours 46 minutes [READ: Count=5, Max=1235, Min=159, Avg=659.6, 90=1235, 99=1235, 99.9=1235, 99.99=1235] [CLEANUP: Count=16, Max=2271, Min=0, Avg=143.62, 90=6, 99=2271, 99.9=2271, 99.99=2271] [UPDATE: Count=4, Max=1534, Min=274, Avg=872, 90=1534, 99=1534, 99.9=1534, 99.99=1534] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 500 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 500 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:43:31:836 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:43:41:836 10 sec: 4967 operations; 496.7 current ops/sec; est completion in 1 hour 40 minutes [READ: Count=2445, Max=80959, Min=120, Avg=791.51, 90=972, 99=4299, 99.9=72703, 99.99=80959] [UPDATE: Count=2526, Max=87615, Min=166, Avg=787.56, 90=1029, 99=4415, 99.9=71551, 99.99=87615] 
+2020-02-18 16:43:51:835 20 sec: 9968 operations; 500.1 current ops/sec; est completion in 1 hour 40 minutes [READ: Count=2459, Max=34783, Min=106, Avg=1085.08, 90=1309, 99=18367, 99.9=32207, 99.99=34783] [UPDATE: Count=2539, Max=37599, Min=155, Avg=979.58, 90=1213, 99=17727, 99.9=28287, 99.99=37599] 
+2020-02-18 16:44:01:835 30 sec: 14967 operations; 499.9 current ops/sec; est completion in 1 hour 39 minutes [READ: Count=2473, Max=6603, Min=109, Avg=449.12, 90=861, 99=1742, 99.9=4931, 99.99=6603] [UPDATE: Count=2527, Max=7639, Min=152, Avg=497.71, 90=921, 99=1645, 99.9=5303, 99.99=7639] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:44:01:895 30 sec: 14981 operations; 233.33 current ops/sec; est completion in 1 hour 39 minutes [READ: Count=8, Max=744, Min=149, Avg=310.25, 90=715, 99=744, 99.9=744, 99.99=744] [CLEANUP: Count=16, Max=2847, Min=0, Avg=178.94, 90=1, 99=2847, 99.9=2847, 99.99=2847] [UPDATE: Count=4, Max=597, Min=165, Avg=282, 90=597, 99=597, 99.9=597, 99.99=597] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 1000 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 1000 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:44:02:497 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:44:12:497 10 sec: 9922 operations; 992.2 current ops/sec; est completion in 50 minutes [READ: Count=4902, Max=81727, Min=117, Avg=803.52, 90=1108, 99=5915, 99.9=74367, 99.99=81727] [UPDATE: Count=5030, Max=79167, Min=165, Avg=773.36, 90=1215, 99=5779, 99.9=20655, 99.99=77503] 
+2020-02-18 16:44:22:497 20 sec: 19921 operations; 999.9 current ops/sec; est completion in 49 minutes [READ: Count=4993, Max=29455, Min=111, Avg=754.82, 90=1154, 99=9199, 99.9=24959, 99.99=29455] [UPDATE: Count=5001, Max=31007, Min=145, Avg=830.33, 90=1180, 99=11791, 99.9=27231, 99.99=30943] 
+2020-02-18 16:44:32:497 30 sec: 29921 operations; 1000 current ops/sec; est completion in 49 minutes [READ: Count=5015, Max=9647, Min=106, Avg=531.49, 90=961, 99=3887, 99.9=7359, 99.99=9023] [UPDATE: Count=4984, Max=10711, Min=147, Avg=606.3, 90=1057, 99=4171, 99.9=9031, 99.99=10711] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:44:32:536 30 sec: 29943 operations; 564.1 current ops/sec; est completion in 49 minutes [READ: Count=12, Max=1307, Min=116, Avg=407.17, 90=829, 99=1307, 99.9=1307, 99.99=1307] [CLEANUP: Count=16, Max=4583, Min=0, Avg=286.81, 90=2, 99=4583, 99.9=4583, 99.99=4583] [UPDATE: Count=6, Max=1733, Min=196, Avg=1139.5, 90=1624, 99=1733, 99.9=1733, 99.99=1733] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 2000 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 2000 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:44:33:126 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:44:43:125 10 sec: 19848 operations; 1984.8 current ops/sec; est completion in 25 minutes [READ: Count=9826, Max=70399, Min=107, Avg=1593.11, 90=2637, 99=27775, 99.9=58527, 99.99=70015] [UPDATE: Count=10077, Max=86335, Min=152, Avg=1642.72, 90=2679, 99=26607, 99.9=61503, 99.99=80575] 
+2020-02-18 16:44:53:125 20 sec: 39850 operations; 2000.2 current ops/sec; est completion in 24 minutes [READ: Count=9986, Max=40607, Min=106, Avg=1063.16, 90=1571, 99=19119, 99.9=38239, 99.99=39999] [UPDATE: Count=9961, Max=41599, Min=145, Avg=1092.33, 90=1749, 99=16783, 99.9=34463, 99.99=41279] 
+2020-02-18 16:45:03:125 30 sec: 59851 operations; 2000.1 current ops/sec; est completion in 24 minutes [READ: Count=10043, Max=27727, Min=107, Avg=884.61, 90=1476, 99=11735, 99.9=25103, 99.99=27487] [UPDATE: Count=9958, Max=30975, Min=144, Avg=942.93, 90=1609, 99=10975, 99.9=26015, 99.99=28431] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:45:03:154 30 sec: 59886 operations; 1206.9 current ops/sec; est completion in 24 minutes [READ: Count=22, Max=5843, Min=117, Avg=1434.59, 90=4855, 99=5843, 99.9=5843, 99.99=5843] [CLEANUP: Count=16, Max=2915, Min=0, Avg=182.62, 90=1, 99=2915, 99.9=2915, 99.99=2915] [UPDATE: Count=13, Max=5939, Min=186, Avg=1661.62, 90=5443, 99=5939, 99.9=5939, 99.99=5939] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 3000 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 3000 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:45:03:763 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:45:13:763 10 sec: 29800 operations; 2980 current ops/sec; est completion in 16 minutes [READ: Count=14900, Max=81407, Min=105, Avg=1437.38, 90=2601, 99=24575, 99.9=37759, 99.99=81215] [UPDATE: Count=14941, Max=91775, Min=141, Avg=1524.95, 90=2693, 99=24511, 99.9=38047, 99.99=90623] 
+2020-02-18 16:45:23:763 20 sec: 59800 operations; 3000 current ops/sec; est completion in 16 minutes [READ: Count=15069, Max=38239, Min=106, Avg=1347.37, 90=2789, 99=22767, 99.9=32831, 99.99=35551] [UPDATE: Count=14909, Max=39743, Min=143, Avg=1378.96, 90=2741, 99=21519, 99.9=32271, 99.99=38207] 
+2020-02-18 16:45:33:762 30 sec: 89798 operations; 2999.8 current ops/sec; est completion in 16 minutes [READ: Count=15056, Max=53887, Min=103, Avg=1706.95, 90=3157, 99=27279, 99.9=31855, 99.99=52927] [UPDATE: Count=14923, Max=54015, Min=138, Avg=1798.3, 90=3223, 99=27967, 99.9=33407, 99.99=53279] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:45:33:788 30 sec: 89855 operations; 2280 current ops/sec; est completion in 16 minutes [READ: Count=28, Max=9519, Min=136, Avg=2928.39, 90=7867, 99=9519, 99.9=9519, 99.99=9519] [CLEANUP: Count=16, Max=2205, Min=0, Avg=139.31, 90=1, 99=2205, 99.9=2205, 99.99=2205] [UPDATE: Count=29, Max=14223, Min=212, Avg=2891.07, 90=6359, 99=14223, 99.9=14223, 99.99=14223] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 5000 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 16 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target 5000 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+2020-02-18 16:45:34:352 0 sec: 0 operations; est completion in 0 second 
+Maximum execution time specified as: 30 secs
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:45:44:352 10 sec: 49538 operations; 4953.8 current ops/sec; est completion in 9 minutes [READ: Count=24911, Max=89727, Min=109, Avg=2855.34, 90=4307, 99=30543, 99.9=49279, 99.99=84799] [UPDATE: Count=24743, Max=90239, Min=149, Avg=2928.36, 90=4475, 99=30031, 99.9=55775, 99.99=88767] 
+2020-02-18 16:45:54:352 20 sec: 99598 operations; 5005.5 current ops/sec; est completion in 9 minutes [READ: Count=25085, Max=73727, Min=104, Avg=2092.56, 90=3899, 99=24751, 99.9=54815, 99.99=66751] [UPDATE: Count=24889, Max=66815, Min=141, Avg=2181.7, 90=3965, 99=26207, 99.9=39327, 99.99=64543] 
+2020-02-18 16:46:04:352 30 sec: 137520 operations; 3792.2 current ops/sec; est completion in 10 minutes [READ: Count=19083, Max=96319, Min=105, Avg=3148.41, 90=8007, 99=29023, 99.9=57855, 99.99=92991] [UPDATE: Count=18809, Max=103359, Min=146, Avg=3232.66, 90=8059, 99=29679, 99.9=58527, 99.99=101247] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:46:04:389 30 sec: 137560 operations; 1081.08 current ops/sec; est completion in 10 minutes [READ: Count=22, Max=35295, Min=746, Avg=14462, 90=34143, 99=35295, 99.9=35295, 99.99=35295] [CLEANUP: Count=16, Max=2761, Min=0, Avg=174.25, 90=7, 99=2761, 99.9=2761, 99.99=2761] [UPDATE: Count=18, Max=34655, Min=1106, Avg=13552.5, 90=31311, 99=34655, 99.9=34655, 99.99=34655] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 1 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 1 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 2 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 2 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 3 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 3 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 4 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 4 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 5 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 5 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 10 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 10 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 20 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 20 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 30 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 30 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 50 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 50 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 100 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 100 -p recordcount=3000000 -p operationcount=0 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 1 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 1 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 2 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 2 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 3 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 3 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 4 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 4 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 5 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 5 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 10 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 10 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 20 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 20 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 30 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 30 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 50 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 50 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 100 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 100 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -target -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Exception in thread "main" java.lang.NumberFormatException: For input string: "-p"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at site.ycsb.Client.parseArguments(Client.java:564)
+	at site.ycsb.Client.main(Client.java:278)
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 1 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 1 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:57:54:338 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:58:04:338 10 sec: 16535 operations; 1653.5 current ops/sec; est completion in 30 minutes [READ: Count=8339, Max=32575, Min=98, Avg=552.47, 90=1073, 99=3977, 99.9=8623, 99.99=28431] [UPDATE: Count=8200, Max=207487, Min=137, Avg=636.56, 90=1122, 99=3909, 99.9=9575, 99.99=52479] 
+2020-02-18 16:58:14:338 20 sec: 36767 operations; 2023.2 current ops/sec; est completion in 26 minutes [READ: Count=10116, Max=27455, Min=94, Avg=464.17, 90=924, 99=3103, 99.9=6655, 99.99=20927] [UPDATE: Count=10112, Max=61151, Min=133, Avg=518.73, 90=964, 99=3197, 99.9=6563, 99.99=56255] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:58:24:338 30 sec: 57555 operations; 2078.8 current ops/sec; est completion in 25 minutes [READ: Count=10457, Max=29359, Min=95, Avg=451.04, 90=872, 99=3049, 99.9=6339, 99.99=28671] [UPDATE: Count=10331, Max=48799, Min=134, Avg=506.62, 90=953, 99=3363, 99.9=7379, 99.99=34431] 
+2020-02-18 16:58:24:352 30 sec: 57556 operations; 66.67 current ops/sec; est completion in 25 minutes [READ: Count=1, Max=7259, Min=7256, Avg=7258, 90=7259, 99=7259, 99.9=7259, 99.99=7259] [CLEANUP: Count=1, Max=4179, Min=4176, Avg=4178, 90=4179, 99=4179, 99.9=4179, 99.99=4179] [UPDATE: Count=0, Max=0, Min=9223372036854775807, Avg=NaN, 90=0, 99=0, 99.9=0, 99.99=0] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 2 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 2 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:58:24:924 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:58:34:923 10 sec: 36699 operations; 3669.9 current ops/sec; est completion in 13 minutes [READ: Count=18378, Max=66367, Min=93, Avg=504.07, 90=948, 99=3297, 99.9=11055, 99.99=29199] [UPDATE: Count=18346, Max=70655, Min=133, Avg=567.39, 90=1013, 99=3573, 99.9=12295, 99.99=67135] 
+2020-02-18 16:58:44:923 20 sec: 75515 operations; 3881.6 current ops/sec; est completion in 12 minutes [READ: Count=19525, Max=33247, Min=95, Avg=487.89, 90=961, 99=3849, 99.9=7899, 99.99=25663] [UPDATE: Count=19273, Max=32655, Min=130, Avg=537.05, 90=1008, 99=3975, 99.9=8087, 99.99=28623] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:58:54:923 30 sec: 117136 operations; 4162.1 current ops/sec; est completion in 12 minutes [READ: Count=20609, Max=32335, Min=91, Avg=459.04, 90=914, 99=3295, 99.9=8247, 99.99=27039] [UPDATE: Count=21005, Max=28543, Min=128, Avg=498.02, 90=962, 99=3225, 99.9=7783, 99.99=28255] 
+2020-02-18 16:58:54:938 30 sec: 117157 operations; 1400 current ops/sec; est completion in 12 minutes [READ: Count=12, Max=4079, Min=117, Avg=1116.67, 90=3837, 99=4079, 99.9=4079, 99.99=4079] [CLEANUP: Count=2, Max=5303, Min=7, Avg=2654.5, 90=5303, 99=5303, 99.9=5303, 99.99=5303] [UPDATE: Count=9, Max=1730, Min=156, Avg=468.22, 90=1010, 99=1730, 99.9=1730, 99.99=1730] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 3 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 3 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:58:55:522 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:59:05:522 10 sec: 43392 operations; 4339.2 current ops/sec; est completion in 11 minutes [READ: Count=21760, Max=66559, Min=97, Avg=647.73, 90=1230, 99=4451, 99.9=24319, 99.99=32527] [UPDATE: Count=21684, Max=82239, Min=134, Avg=711.72, 90=1304, 99=4531, 99.9=25551, 99.99=32639] 
+2020-02-18 16:59:15:522 20 sec: 81634 operations; 3824.2 current ops/sec; est completion in 11 minutes [READ: Count=19100, Max=48127, Min=94, Avg=758.72, 90=1988, 99=5307, 99.9=10999, 99.99=44767] [UPDATE: Count=19109, Max=28111, Min=131, Avg=804.47, 90=2071, 99=5339, 99.9=11615, 99.99=27119] 
+2020-02-18 16:59:25:522 30 sec: 125016 operations; 4338.2 current ops/sec; est completion in 11 minutes [READ: Count=21574, Max=30751, Min=95, Avg=664.8, 90=1458, 99=4855, 99.9=9327, 99.99=29679] [UPDATE: Count=21789, Max=30559, Min=131, Avg=714.28, 90=1514, 99=4863, 99.9=11535, 99.99=29711] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:59:25:545 30 sec: 125023 operations; 291.67 current ops/sec; est completion in 11 minutes [READ: Count=2, Max=7543, Min=178, Avg=3860, 90=7543, 99=7543, 99.9=7543, 99.99=7543] [CLEANUP: Count=3, Max=9519, Min=2, Avg=3185.33, 90=9519, 99=9519, 99.9=9519, 99.99=9519] [UPDATE: Count=5, Max=8871, Min=237, Avg=3832.2, 90=8871, 99=8871, 99.9=8871, 99.99=8871] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 4 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 4 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:59:26:094 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 16:59:36:094 10 sec: 54697 operations; 5469.7 current ops/sec; est completion in 8 minutes [READ: Count=27345, Max=92159, Min=105, Avg=686.91, 90=1301, 99=4319, 99.9=24751, 99.99=73983] [UPDATE: Count=27383, Max=89919, Min=144, Avg=752.4, 90=1391, 99=4539, 99.9=26111, 99.99=32527] 
+2020-02-18 16:59:46:094 20 sec: 116991 operations; 6229.4 current ops/sec; est completion in 8 minutes [READ: Count=31403, Max=87167, Min=98, Avg=618.72, 90=1191, 99=4415, 99.9=10311, 99.99=33535] [UPDATE: Count=30880, Max=86335, Min=140, Avg=660.11, 90=1242, 99=4391, 99.9=10119, 99.99=29695] 
+2020-02-18 16:59:56:094 30 sec: 177100 operations; 6010.9 current ops/sec; est completion in 7 minutes [READ: Count=30289, Max=89471, Min=103, Avg=643.63, 90=1263, 99=4567, 99.9=13511, 99.99=88511] [UPDATE: Count=29800, Max=88063, Min=140, Avg=682.86, 90=1340, 99=4511, 99.9=8799, 99.99=29743] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 16:59:56:120 30 sec: 177137 operations; 1423.08 current ops/sec; est completion in 7 minutes [READ: Count=18, Max=10007, Min=144, Avg=1323.33, 90=2523, 99=10007, 99.9=10007, 99.99=10007] [CLEANUP: Count=4, Max=11871, Min=0, Avg=2968.25, 90=11871, 99=11871, 99.9=11871, 99.99=11871] [UPDATE: Count=19, Max=10407, Min=194, Avg=2395.16, 90=10295, 99=10407, 99.9=10407, 99.99=10407] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 5 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 5 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 16:59:56:670 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 17:00:06:670 10 sec: 55714 operations; 5571.4 current ops/sec; est completion in 8 minutes [READ: Count=27883, Max=88767, Min=103, Avg=851.82, 90=1480, 99=7751, 99.9=29119, 99.99=72703] [UPDATE: Count=27852, Max=96447, Min=142, Avg=918.09, 90=1575, 99=7491, 99.9=30431, 99.99=72063] 
+2020-02-18 17:00:16:670 20 sec: 94472 operations; 3875.8 current ops/sec; est completion in 10 minutes [READ: Count=19524, Max=89855, Min=104, Avg=1256.05, 90=3001, 99=6639, 99.9=30127, 99.99=87551] [UPDATE: Count=19213, Max=88255, Min=142, Avg=1318.79, 90=3051, 99=6751, 99.9=28447, 99.99=40063] 
+2020-02-18 17:00:26:670 30 sec: 138274 operations; 4380.2 current ops/sec; est completion in 10 minutes [READ: Count=21841, Max=87487, Min=102, Avg=1104.47, 90=2845, 99=6735, 99.9=28303, 99.99=45183] [UPDATE: Count=21961, Max=87999, Min=141, Avg=1174.34, 90=2931, 99=6971, 99.9=28175, 99.99=86015] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 17:00:26:690 30 sec: 138295 operations; 1000 current ops/sec; est completion in 10 minutes [READ: Count=13, Max=12831, Min=132, Avg=3830.15, 90=12767, 99=12831, 99.9=12831, 99.99=12831] [CLEANUP: Count=5, Max=5559, Min=1, Avg=1114, 90=5559, 99=5559, 99.9=5559, 99.99=5559] [UPDATE: Count=8, Max=12615, Min=308, Avg=4043.5, 90=12391, 99=12615, 99.9=12615, 99.99=12615] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 10 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 10 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 17:00:27:287 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 17:00:37:287 10 sec: 60931 operations; 6093.1 current ops/sec; est completion in 8 minutes [READ: Count=30507, Max=97407, Min=100, Avg=1601.68, 90=2825, 99=9623, 99.9=33119, 99.99=95679] [UPDATE: Count=30543, Max=100351, Min=150, Avg=1644.5, 90=2881, 99=9519, 99.9=33183, 99.99=94271] 
+2020-02-18 17:00:47:287 20 sec: 115800 operations; 5486.9 current ops/sec; est completion in 8 minutes [READ: Count=27364, Max=94399, Min=101, Avg=1810.26, 90=3631, 99=11047, 99.9=33951, 99.99=90239] [UPDATE: Count=27425, Max=95039, Min=142, Avg=1832.57, 90=3609, 99=10431, 99.9=33087, 99.99=91647] 
+2020-02-18 17:00:57:287 30 sec: 174659 operations; 5885.9 current ops/sec; est completion in 8 minutes [READ: Count=29473, Max=34367, Min=103, Avg=1669.93, 90=3611, 99=8535, 99.9=27871, 99.99=32463] [UPDATE: Count=29358, Max=38911, Min=145, Avg=1722.07, 90=3725, 99=8607, 99.9=30143, 99.99=33759] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 17:00:57:313 30 sec: 174722 operations; 2333.33 current ops/sec; est completion in 8 minutes [READ: Count=37, Max=10399, Min=328, Avg=3163.22, 90=6791, 99=10399, 99.9=10399, 99.99=10399] [CLEANUP: Count=10, Max=7667, Min=0, Avg=767.4, 90=7, 99=7667, 99.9=7667, 99.99=7667] [UPDATE: Count=15, Max=7383, Min=381, Avg=3421.33, 90=6795, 99=7383, 99.9=7383, 99.99=7383] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 20 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 20 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 30 secs
+2020-02-18 17:00:57:906 0 sec: 0 operations; est completion in 0 second 
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 17:01:07:906 10 sec: 54071 operations; 5407.1 current ops/sec; est completion in 9 minutes [READ: Count=27134, Max=136959, Min=110, Avg=3652.81, 90=6703, 99=27071, 99.9=57279, 99.99=128319] [UPDATE: Count=27048, Max=141823, Min=150, Avg=3666.5, 90=6635, 99=26735, 99.9=71487, 99.99=129663] 
+2020-02-18 17:01:17:906 20 sec: 87886 operations; 3381.16 current ops/sec; est completion in 11 minutes [READ: Count=16811, Max=93439, Min=143, Avg=5815.99, 90=11679, 99=26351, 99.9=38143, 99.99=87423] [UPDATE: Count=16915, Max=96319, Min=170, Avg=6001.89, 90=11831, 99=28095, 99.9=37951, 99.99=90559] 
+2020-02-18 17:01:27:906 30 sec: 132384 operations; 4450.25 current ops/sec; est completion in 10 minutes [READ: Count=22142, Max=97727, Min=110, Avg=4479.9, 90=9655, 99=17583, 99.9=64639, 99.99=93823] [UPDATE: Count=22343, Max=103999, Min=152, Avg=4503.24, 90=9711, 99=17407, 99.9=68287, 99.99=94335] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 17:01:27:936 30 sec: 132453 operations; 2225.81 current ops/sec; est completion in 10 minutes [READ: Count=35, Max=16087, Min=2980, Avg=8957.17, 90=14535, 99=16087, 99.9=16087, 99.99=16087] [CLEANUP: Count=20, Max=2165, Min=0, Avg=108.85, 90=2, 99=2165, 99.9=2165, 99.99=2165] [UPDATE: Count=25, Max=14167, Min=2874, Avg=8023.28, 90=11511, 99=14167, 99.9=14167, 99.99=14167] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 30 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 30 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+2020-02-18 17:01:28:535 0 sec: 0 operations; est completion in 0 second 
+Maximum execution time specified as: 30 secs
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 17:01:38:535 10 sec: 53762 operations; 5376.2 current ops/sec; est completion in 9 minutes [READ: Count=26788, Max=89343, Min=114, Avg=5508.7, 90=10807, 99=21359, 99.9=39967, 99.99=79743] [UPDATE: Count=27008, Max=94975, Min=215, Avg=5536.06, 90=10887, 99=21343, 99.9=40479, 99.99=94015] 
+2020-02-18 17:01:48:535 20 sec: 105788 operations; 5202.6 current ops/sec; est completion in 9 minutes [READ: Count=25861, Max=106111, Min=129, Avg=5724.78, 90=11151, 99=22015, 99.9=38975, 99.99=104255] [UPDATE: Count=26161, Max=106687, Min=180, Avg=5798.97, 90=11207, 99=21919, 99.9=41343, 99.99=104895] 
+2020-02-18 17:01:58:535 30 sec: 161694 operations; 5590.04 current ops/sec; est completion in 8 minutes [READ: Count=27779, Max=217599, Min=129, Avg=5352.42, 90=10391, 99=18239, 99.9=32191, 99.99=215935] [UPDATE: Count=28106, Max=216959, Min=150, Avg=5376.49, 90=10583, 99=18383, 99.9=30735, 99.99=215679] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 17:01:58:580 30 sec: 161966 operations; 6044.44 current ops/sec; est completion in 8 minutes [READ: Count=134, Max=9983, Min=296, Avg=3699.76, 90=5903, 99=9063, 99.9=9983, 99.99=9983] [CLEANUP: Count=30, Max=9143, Min=0, Avg=305.5, 90=2, 99=9143, 99.9=9143, 99.99=9143] [UPDATE: Count=129, Max=10055, Min=265, Avg=4124.03, 90=7171, 99=10015, 99.9=10055, 99.99=10055] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 50 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 50 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+2020-02-18 17:01:59:168 0 sec: 0 operations; est completion in 0 second 
+Maximum execution time specified as: 30 secs
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 17:02:09:168 10 sec: 56768 operations; 5676.8 current ops/sec; est completion in 8 minutes [READ: Count=28280, Max=108991, Min=259, Avg=8609.04, 90=16431, 99=35967, 99.9=88767, 99.99=104255] [UPDATE: Count=28544, Max=126655, Min=400, Avg=8749.49, 90=16495, 99=37567, 99.9=95103, 99.99=123647] 
+2020-02-18 17:02:19:168 20 sec: 100582 operations; 4381.4 current ops/sec; est completion in 9 minutes [READ: Count=21952, Max=124607, Min=322, Avg=11452.32, 90=23231, 99=39359, 99.9=95743, 99.99=117439] [UPDATE: Count=21815, Max=120319, Min=412, Avg=11414.49, 90=23039, 99=37695, 99.9=99839, 99.99=114623] 
+2020-02-18 17:02:29:168 30 sec: 144500 operations; 4391.8 current ops/sec; est completion in 9 minutes [READ: Count=22006, Max=112511, Min=405, Avg=11349.69, 90=22623, 99=35007, 99.9=102591, 99.99=109055] [UPDATE: Count=21932, Max=112447, Min=371, Avg=11417.94, 90=22735, 99=36063, 99.9=98303, 99.99=110143] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 17:02:29:250 30 sec: 145011 operations; 6231.71 current ops/sec; est completion in 9 minutes [READ: Count=255, Max=28271, Min=1423, Avg=6934.93, 90=9839, 99=19743, 99.9=28271, 99.99=28271] [CLEANUP: Count=50, Max=2737, Min=0, Avg=55.76, 90=1, 99=2737, 99.9=2737, 99.99=2737] [UPDATE: Count=227, Max=28047, Min=603, Avg=6997.93, 90=9143, 99=24095, 99.9=28047, 99.99=28047] 
+java -cp /home/ubuntu/ycsb-0.17.0/mongodb-binding/conf:/home/ubuntu/ycsb-0.17.0/conf:/home/ubuntu/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar:/home/ubuntu/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar site.ycsb.Client -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 100 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+Command line: -db site.ycsb.db.AsyncMongoDbClient -s -P workloads/workloada -threads 100 -p recordcount=3000000 -p operationcount=3000000 -p maxexecutiontime=30 -p mongodb.url=mongodb://172.31.36.162:27017 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+2020-02-18 17:02:29:843 0 sec: 0 operations; est completion in 0 second 
+Maximum execution time specified as: 30 secs
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2020-02-18 17:02:39:843 10 sec: 44696 operations; 4469.6 current ops/sec; est completion in 11 minutes [READ: Count=22322, Max=153343, Min=331, Avg=22128.06, 90=41791, 99=75455, 99.9=131967, 99.99=146175] [UPDATE: Count=22559, Max=152703, Min=560, Avg=21864.97, 90=41119, 99=69631, 99.9=140159, 99.99=151423] 
+2020-02-18 17:02:49:843 20 sec: 97234 operations; 5253.8 current ops/sec; est completion in 9 minutes [READ: Count=26208, Max=78655, Min=2738, Avg=19068.61, 90=38591, 99=56895, 99.9=71039, 99.99=75967] [UPDATE: Count=26240, Max=78719, Min=3290, Avg=19004.54, 90=38463, 99=56511, 99.9=71615, 99.99=77439] 
+2020-02-18 17:02:59:843 30 sec: 150120 operations; 5288.6 current ops/sec; est completion in 9 minutes [READ: Count=26281, Max=135935, Min=988, Avg=18854.75, 90=34655, 99=51999, 99.9=112767, 99.99=125631] [UPDATE: Count=26544, Max=137727, Min=1531, Avg=18975.01, 90=34751, 99=51967, 99.9=119935, 99.99=133503] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2020-02-18 17:02:59:957 30 sec: 151028 operations; 7895.65 current ops/sec; est completion in 9 minutes [READ: Count=434, Max=34207, Min=1075, Avg=11945.56, 90=22831, 99=33823, 99.9=34207, 99.99=34207] [CLEANUP: Count=100, Max=2801, Min=0, Avg=29.12, 90=1, 99=11, 99.9=2801, 99.99=2801] [UPDATE: Count=440, Max=34559, Min=1131, Avg=12431.84, 90=25663, 99=33311, 99.9=34559, 99.99=34559] 
