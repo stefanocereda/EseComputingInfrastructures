@@ -92,7 +92,7 @@ We now look at the grafana dashboard:
  - http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582105403442&to=1582107494689&var-node=172.31.36.162:9100 (login with user/user)
  - http://polimi.dev.akamas.io:3000/dashboard/snapshot/WN4m0GjljYtWUWh2EmACciOGfzQCWgfR?orgId=1
  
-Looking at high iowait time and disk utilization, we can conclude that our bootleneck is the disk.
+Looking at high iowait time and disk utilization, we can conclude that our bottleneck is the disk.
 Looking at disk IOs and throughput, we find the culprit of throughput drop: we are running our DB on an Amazon instance with a burstable amount of IOPS, meaning that we can substain high IO rates for a certain amount of time, but then they will be reduced.
 
 We thus conclude that we are being limited by our disk, and thus try to move the database to a faster instance.
