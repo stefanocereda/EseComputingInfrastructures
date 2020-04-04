@@ -69,22 +69,22 @@ sudo service mongod status
 # Let's run some performance tests
 ## Is Lazowska right?
 We can now use YCSB to inject some load into MongoDB and use the collected metrics to check some performance laws.
-Let's start by actually creating our db with the create_db.sh scriptm which should be run on the cleint machine.
+Let's start by actually creating our db with the create_db.sh script which should be run on the client machine.
 
-Now we can find the maximum throughput of our database with the run_ycsb.sh script (up to line 9).
-We obtain X_max = 5456
+Now we can find the maximum throughput of our database with the run_ycsb.sh script (up to line 10).
+We obtain X_max = 4324
 
 By using a target troughput lower than X_max and exploring different values we can validate the response time law.
-Collect the data with the second section of runc_ycsb.sh
+Collect the data with the second section of run_ycsb.sh (up to line 16)
 
-By playing with the number of users (third section of the script) we can validate the bounds on X and R.
+By playing with the number of users (third section of the script, up to line 22) we can validate the bounds on X and R.
 
-Look at the .ods file for the analysis (tldr: Lazowska is right)
+Look at the mongo.ods file for the analysis (tldr: Lazowska is right)
 
 
 ## A longer test
 Let's now run a longer test, to see whether we can keep up with the load.
-Increase the duration to 1 hour and run again the test for max_x.
+Increase the duration to 1 hour and run again the test for max_x (last line of the script).
 
 As the test proceeds we observe that, after a while (~ half an hour), the throughput will _drammatically_ drop.
 
@@ -93,14 +93,14 @@ We now look at the grafana dashboard:
  - http://polimi.dev.akamas.io:3000/dashboard/snapshot/WN4m0GjljYtWUWh2EmACciOGfzQCWgfR?orgId=1
  
 Looking at high iowait time and disk utilization, we can conclude that our bootleneck is the disk.
-Looking at disk IOs and throughput, we find the culprit of trhoughput drop: ee are runnigng our DB on an Amazon instance with a burstable amount of IOPS, meaning that we can substain high IO rates for a certain amount of time, but then they will be reduced.
+Looking at disk IOs and throughput, we find the culprit of throughput drop: we are running our DB on an Amazon instance with a burstable amount of IOPS, meaning that we can substain high IO rates for a certain amount of time, but then they will be reduced.
 
 We thus conclude that we are being limited by our disk, and thus try to move the database to a faster instance.
 
 
 ## Adding a RAID-0
 Let's create four other 10GB SSD disks on Amazon and attach them to our machine.
-Use the disks to create a RAID-0:
+Use the disks to create a RAID-0 and format the disk with xfs, wich is the suggested filesystem for databases:
 
 ```
 ssh [server_ip]
@@ -123,15 +123,16 @@ sudo service mongod status
 ## Repeating the long test
 Recreate the dataset and launch again the long test. The database is effectively faster (X_max=7614)
 
-http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582108899539&to=1582110448630&var-node=172.31.36.162:9100
-http://polimi.dev.akamas.io:3000/dashboard/snapshot/d6CbpbEjlG6ldArviFapqtUVetOS9bYE
+- http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582108899539&to=1582110448630&var-node=172.31.36.162:9100
+- http://polimi.dev.akamas.io:3000/dashboard/snapshot/d6CbpbEjlG6ldArviFapqtUVetOS9bYE
 
 ## Changing the filesystem
 We still are not happy with performance. We thus look at mongodb configuration suggestions:
 https://docs.mongodb.com/manual/administration/production-notes/
 Where we discover that:
-``When running MongoDB in production on Linux, you should use Linux kernel version 2.6.36 or later, with either the XFS or EXT4 filesystem. If possible, use XFS as it generally performs better with MongoDB.''
-Let's see if they are right and move our database to an ext4 disk.
+> When running MongoDB in production on Linux, you should use Linux kernel version 2.6.36 or later, with either the XFS or EXT4 filesystem. If possible, use XFS as it generally performs better with MongoDB.
+
+Let's see if they are right and move our database to an ext4 disk:
 ```
 ssh [server_ip]
 sudo service mongod stop
@@ -147,12 +148,13 @@ sudo sed -i 's/\/var\/log\/mongodb\/mongod.log/\/mnt\/mongo\/log\/mongod.log/g' 
 sudo sed -i 's/\/var\/lib\/mongodb/\/mnt\/mongo\/mongodb/g' /etc/mongod.conf
 sudo service mongod start
 sudo service mongod status
-'''
-Create again the database and run another long test.
-The throughput increases to X_max = 8579
+```
 
-http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582117268593&to=1582119315053&var-node=172.31.36.162:9100
-http://polimi.dev.akamas.io:3000/dashboard/snapshot/ePD0yjXVwFgXHU3D1zfmqLbEPnADgsly
+Create again the database and run another long test.
+The throughput increases to X_max = 8630
+
+- http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582117268593&to=1582119315053&var-node=172.31.36.162:9100
+- http://polimi.dev.akamas.io:3000/dashboard/snapshot/ePD0yjXVwFgXHU3D1zfmqLbEPnADgsly
 
 Ouch! MongoDB production notes are wrong! Or do the optimal configuration depends on you workload?
 Let's find it out with https://www.akamas.io/
