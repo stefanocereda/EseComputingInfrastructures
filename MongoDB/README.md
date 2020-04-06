@@ -4,6 +4,24 @@ https://github.com/stefanocereda/EseComputingInfrastructures/blob/master/MongoDB
 
 https://github.com/stefanocereda/EseComputingInfrastructures/tree/master/ansible
 
+# Our goal
+In the following we will see how to conduct a performance test on a database and check whether performance theory stands the test of practice.
+
+To do this, we need to create an infrastructure composed by three components:
+- a master machine collecting the data
+- a server machine running the MongoDB database
+- a client machine running the ycsb program, which we use to simulate load on the database
+
+We also use prometheus for the monitoring activity and grafana for dashboarding:
+```
+ycsb <-----> mongodb
+     \      /
+      \    /
+       \  /
+        \/
+prometheus monitoring -> grafana dashboard
+```
+
 # Infrastructure setup
 ## Master Node creation
 Let's start by manually creating a master instance on Amazon.
@@ -91,7 +109,7 @@ As the test proceeds we observe that, after a while (~ half an hour), the throug
 We now look at the grafana dashboard:
  - http://polimi.dev.akamas.io:3000/d/yAuNZoQWk/node-exporter-server-metrics?orgId=1&from=1582105403442&to=1582107494689&var-node=172.31.36.162:9100 (login with user/user)
  - http://polimi.dev.akamas.io:3000/dashboard/snapshot/WN4m0GjljYtWUWh2EmACciOGfzQCWgfR?orgId=1
- 
+
 Looking at high iowait time and disk utilization, we can conclude that our bottleneck is the disk.
 Looking at disk IOs and throughput, we find the culprit of throughput drop: we are running our DB on an Amazon instance with a burstable amount of IOPS, meaning that we can substain high IO rates for a certain amount of time, but then they will be reduced.
 
